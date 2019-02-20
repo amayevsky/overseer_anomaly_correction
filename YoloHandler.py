@@ -156,10 +156,3 @@ class Yolo:
             cv2.destroyAllWindows()
 
         return final_image
-
-
-# image = cv2.imread('test.jpg')
-# newYolo = Yolo()
-# boxes = newYolo.calculate(image, suppress=True)[1]
-# newYolo._draw_boxes(image, boxes, suppress=False)
-

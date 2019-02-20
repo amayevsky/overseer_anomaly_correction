@@ -10,7 +10,7 @@ from conf import TIME_SERIES_TRAIN_WINDOW as PREDICTION_WINDOW
 from conf import HISTORIAN_NONE_MEMORY_MAXIMUM
 from conf import HISTORIAN_PREDICTION_STRATEGY
 
-from conf import sgolay_polynomial_order
+from conf import SGOLAY_POLYNOMIAL_ORDER
 
 from conf import observation_metadata_indices
 
@@ -178,7 +178,7 @@ class Historian:
             if len(y_data) % 2 != 0:
                 y_data = y_data[1:]
                 x_data = x_data[1:]
-            if len(y_data) < sgolay_polynomial_order:
+            if len(y_data) < SGOLAY_POLYNOMIAL_ORDER:
                 return None
             predicted_point = self.sgolay_filt(x_data, y_data)
         else:
@@ -251,7 +251,7 @@ class Historian:
         reg.fit(x_data[:-1].reshape(-1, 1), y_data.reshape(-1, 1))
         y_pred = reg.predict(x_data.reshape(-1, 1))
 
-        return savgol_filter(np.append(y_data, y_pred[-1]), len(x_data), sgolay_polynomial_order, deriv=0)[-1]
+        return savgol_filter(np.append(y_data, y_pred[-1]), len(x_data), SGOLAY_POLYNOMIAL_ORDER, deriv=0)[-1]
 
     @staticmethod
     def squash(the_data, width):
