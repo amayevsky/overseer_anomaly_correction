@@ -20,7 +20,7 @@ class Yolo:
     def __init__(self):
         self.model = yolo()
         self.min_threshold = 0.5
-        self.model_file = 'yolo/yolo.weights'
+        self.model_file = 'yolo/initial-model.h5'
         self.model.load_weights(self.model_file)
 
         # self.inWidth = 416

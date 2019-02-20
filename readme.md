@@ -3,12 +3,12 @@
 Detect and correct anomalies on the fly in time series data.
 This was designed to accept the outputs of models like YOLO and OpenPose that typically perform their analysis on a frame-by frame basis.
 The goal of this package is to improve the output of other models by considering prior observations.
+In the context of multi-object detection where identification is not performed (such as YOLO), overseer can perform object tracking. 
 
 ## Quick Start
 ### YOLO
-1. Download the YOLO weights from the YOLO website: https://pjreddie.com/darknet/yolo/
-2. Put the weights file in the yolo folder.
-3. Rename the wieghts file to 'yolo.weights'.
+1. Download the YOLO checkpoint (initial-model.h5) from: https://github.com/ndaidong/yolo-person-detect
+2. Put the file in the yolo folder.
 
 ### OpenPose
 1. Clone the OpenPose repository: https://github.com/CMU-Perceptual-Computing-Lab/openpose
