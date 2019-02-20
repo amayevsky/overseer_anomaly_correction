@@ -14,3 +14,6 @@ In the context of multi-object detection where identification is not performed (
 1. Clone the OpenPose repository: https://github.com/CMU-Perceptual-Computing-Lab/openpose
 2. Download the OpenPose coco and/or body25 weights by running getModels (located in the models folder of the openpose repository).
 3. Add the path to openpose-master to the conf.py file (the openpose_repo_path variable).
+
+### To run
+Run front_end.py
