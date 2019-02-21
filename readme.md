@@ -1,4 +1,4 @@
-# Overseer Anomaly Detection
+# Overseer Anomaly Correction
 
 Detect and correct anomalies on the fly in time series data.
 This was designed to accept the outputs of models like YOLO and OpenPose that typically perform their analysis on a frame-by frame basis.
