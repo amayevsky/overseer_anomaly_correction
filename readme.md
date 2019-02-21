@@ -9,6 +9,7 @@ In the context of multi-object detection where identification is not performed (
 ### YOLO
 1. Download the YOLO checkpoint (initial-model.h5) from: https://github.com/ndaidong/yolo-person-detect
 2. Put the file in the yolo folder.
+3. Change the 'yolo.weights' string in Deploy.py to the name of the file
 
 ### OpenPose
 1. Clone the OpenPose repository: https://github.com/CMU-Perceptual-Computing-Lab/openpose
