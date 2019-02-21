@@ -17,3 +17,4 @@ In the context of multi-object detection where identification is not performed (
 
 ### To run
 Run front_end.py
+By default it streams images from a webcam to YOLO.
