@@ -1,0 +1,4 @@
+log:
+  file: logs.log
+  level: DEBUG
+model: yolo
