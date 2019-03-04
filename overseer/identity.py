@@ -118,7 +118,7 @@ def _configurations(entities, identities):
 	"""
 	Non-recursive for his majesty's pleasure
 	"""
-	for permutation in itertools.permutations(entities, len(entities)):
+	for permutation in itertools.permutations(entities):
 		yield {
 			entity: identity
 			for entity, identity in itertools.zip_longest(
