@@ -1,5 +1,4 @@
 import argparse
-import asyncio
 import itertools
 import logging
 import math
@@ -154,7 +153,6 @@ def frames_and_entities(video_path, model_path):
 
 
 def run(video_path, model_path):
-	loop = asyncio.get_event_loop()
 	for frames, _ in frames_and_entities(video_path, model_path):
 		identified_frame, unidentified_frame, frame = frames
 		cv2.imshow('raw', frame)
