@@ -1,4 +1,5 @@
 import argparse
+import asyncio
 import itertools
 import logging
 import math
@@ -114,16 +115,16 @@ class YoloModel:
 
 
 def _configurations(entities, identities):
-	if not entities:
-		return
-	if not identities:
-		yield {x: None for x in entities}
-		return
-	entity, *entities = entities
-	for identity in identities:
-		remaining_identities = [x for x in identities if x != identity]
-		for configuration in _configurations(entities, remaining_identities):
-			yield {entity: identity, **configuration}
+	"""
+	Non-recursive for his majesty's pleasure
+	"""
+	for permutation in itertools.permutations(entities, len(entities)):
+		yield {
+			entity: identity
+			for entity, identity in itertools.zip_longest(
+				permutation, identities, fillvalue=None)
+			if entity is not None
+	}
 
 
 def _test_configuration(configuration, snapshot):
@@ -153,6 +154,7 @@ def frames_and_entities(video_path, model_path):
 
 
 def run(video_path, model_path):
+	loop = asyncio.get_event_loop()
 	for frames, _ in frames_and_entities(video_path, model_path):
 		identified_frame, unidentified_frame, frame = frames
 		cv2.imshow('raw', frame)
