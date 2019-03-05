@@ -54,7 +54,7 @@ class Histories:
 	@property
 	def next_identity(self):
 		return max(self.identified_histories, default=-1) + 1
-	
+
 	def update(self, anonymous_entities):
 		available_identities = itertools.count(self.next_identity)
 		hypotheses = _configurations(
@@ -123,7 +123,7 @@ def _configurations(entities, identities):
 			for entity, identity in itertools.zip_longest(
 				permutation, identities, fillvalue=None)
 			if entity is not None
-	}
+		}
 
 
 def _test_configuration(configuration, snapshot):
